@@ -1097,7 +1097,7 @@ public final class ArtShellCommand extends BasicShellCommandHandler {
 
     private void enforceRootOrShell() {
         final int uid = Binder.getCallingUid();
-        if (uid != Process.ROOT_UID && uid != Process.SHELL_UID) {
+        if (uid != Process.ROOT_UID && uid != Process.SHELL_UID && uid != Process.SYSTEM_UID) {
             throw new SecurityException("ART service shell commands need root or shell access");
         }
     }
